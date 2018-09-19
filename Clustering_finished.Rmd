@@ -231,7 +231,7 @@ Step 1. Center the data by subtracting the mean of the each column from the valu
 #we need a square matrix
 Auto_data_clust_pca <- data.matrix(Auto_data_clust[1:8,])
 
-Center_auto <- apply(Auto_data_clust_pca, 1, function(x) x - mean(x))
+Center_auto <- apply(Auto_data_clust_pca, 2, function(x) x - mean(x))
 ```
 
 
@@ -273,7 +273,7 @@ Now that we know how PCA works, lets use the R funtion prcomp.
 
 ```{r}
 help("prcomp")
-autoplot(prcomp(t(Auto_data_clust_pca)))
+autoplot(prcomp(Auto_data_clust_pca))
 ```
 
 \newpage
